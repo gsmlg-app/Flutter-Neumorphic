@@ -1,3 +1,8 @@
+## 3.4.0
+
+* Remove `headline5` and `bodyText2`, they are nolonger exists
+* Fix publish warnning
+
 ## 3.3.0
 
 * Update flutter and dart version to 3.0.0

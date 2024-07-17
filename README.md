@@ -17,7 +17,7 @@ https://pub.dartlang.org/packages/flutter_neumorphic_plus)
 
 ```dart
 dependencies:
-  flutter_neumorphic_plus: ^3.3.0
+  flutter_neumorphic_plus: ^3.4.0
 
 //requires flutter > 3.0.0
 ```
