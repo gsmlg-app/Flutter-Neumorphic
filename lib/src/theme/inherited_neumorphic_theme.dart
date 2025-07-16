@@ -1,9 +1,5 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
-import 'theme.dart';
-import 'theme_wrapper.dart';
 
 export 'theme.dart';
 export 'theme_wrapper.dart';

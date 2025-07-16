@@ -1,11 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
-import '../theme/neumorphic_theme.dart';
-import '../widget/app_bar.dart';
 import 'animation/animated_scale.dart' as animationScale;
-import 'container.dart';
 
 typedef void NeumorphicButtonClickListener();
 
