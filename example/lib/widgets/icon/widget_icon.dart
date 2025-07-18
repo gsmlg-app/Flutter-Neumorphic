@@ -3,7 +3,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class IconWidgetPage extends StatefulWidget {
-  IconWidgetPage({Key? key}) : super(key: key);
+  const IconWidgetPage({Key? key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -14,7 +14,7 @@ class _WidgetPageState extends State<IconWidgetPage> {
   Widget build(BuildContext context) {
     return NeumorphicTheme(
       themeMode: ThemeMode.light,
-      theme: NeumorphicThemeData(
+      theme: const NeumorphicThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumorphicColors.accent,
         depth: 4,
@@ -34,18 +34,18 @@ class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
     return NeumorphicBackground(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
-          title: "Icons",
+        appBar: const TopBar(
+          title: 'Icons',
           actions: <Widget>[
             ThemeConfigurator(),
           ],
         ),
         backgroundColor: Colors.transparent,
         body: GridView.builder(
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4),
           itemCount: icons.length,
           itemBuilder: (context, index) {
             return Padding(
@@ -53,7 +53,7 @@ class _PageState extends State<_Page> {
               child: NeumorphicIcon(
                 icons[index],
                 size: 80,
-                style: NeumorphicStyle(
+                style: const NeumorphicStyle(
                     //shape: NeumorphicShape.convex,
                     //surfaceIntensity: 1.0
                     ),

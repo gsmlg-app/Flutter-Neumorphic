@@ -9,7 +9,11 @@ class ColorSelector extends StatelessWidget {
   final double width;
 
   const ColorSelector(
-      {this.height = 40, this.width = 40, this.color, this.onColorChanged});
+      {super.key,
+      this.height = 40,
+      this.width = 40,
+      this.color,
+      this.onColorChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +22,11 @@ class ColorSelector extends StatelessWidget {
         _changeColor(context);
       },
       child: Container(
-        height: this.height,
-        width: this.width,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: this.color,
+            color: color,
             border: Border.all(
               color: Colors.grey,
               width: 1,
@@ -40,8 +44,8 @@ class ColorSelector extends StatelessWidget {
             content: SingleChildScrollView(
               child: ColorPicker(
                 pickerColor: color!,
-                onColorChanged: this.onColorChanged!,
-                showLabel: true,
+                onColorChanged: onColorChanged!,
+                labelTypes: const [ColorLabelType.hex, ColorLabelType.rgb, ColorLabelType.hsv, ColorLabelType.hsl],
                 pickerAreaHeightPercent: 0.8,
               ),
             ),

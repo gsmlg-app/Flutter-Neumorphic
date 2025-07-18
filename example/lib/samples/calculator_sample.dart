@@ -1,17 +1,19 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class CalculatorSample extends StatefulWidget {
+  const CalculatorSample({super.key});
+
   @override
   createState() => _CalculatorSampleState();
 }
 
-final Color _calcTextColor = Color(0xFF484848);
+const Color _calcTextColor = Color(0xFF484848);
 
 class _CalculatorSampleState extends State<CalculatorSample> {
   @override
   Widget build(BuildContext context) {
     return NeumorphicTheme(
-      theme: NeumorphicThemeData(
+      theme: const NeumorphicThemeData(
         baseColor: Color(0xFFF4F5F5),
         intensity: 0.3,
         lightSource: LightSource.topLeft,
@@ -49,7 +51,7 @@ class CalcButton {
 class WidgetCalcButton extends StatelessWidget {
   final CalcButton button;
 
-  WidgetCalcButton(this.button);
+  const WidgetCalcButton(this.button, {super.key});
 
   Color _textColor(BuildContext context) {
     if (button.backgroundAccent) {
@@ -72,12 +74,12 @@ class WidgetCalcButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 14),
+      padding: const EdgeInsets.only(top: 14),
       child: NeumorphicButton(
         onPressed: () {},
         style: NeumorphicStyle(
           surfaceIntensity: 0.15,
-          boxShape: NeumorphicBoxShape.circle(),
+          boxShape: const NeumorphicBoxShape.circle(),
           shape: NeumorphicShape.concave,
           color: _backgroundColor(context),
         ),
@@ -100,20 +102,20 @@ class _TopScreenWidget extends StatelessWidget {
         boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(12)),
         depth: -1 * NeumorphicTheme.of(context)!.current!.depth,
       ),
-      child: FractionallySizedBox(
+      child: const FractionallySizedBox(
         widthFactor: 1,
         child: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: EdgeInsets.all(18.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Text(
-                "3 x 7 =",
+                '3 x 7 =',
                 style: TextStyle(fontSize: 30, color: _calcTextColor),
               ),
-              Text("21", style: TextStyle(fontSize: 56, color: _calcTextColor)),
+              Text('21', style: TextStyle(fontSize: 56, color: _calcTextColor)),
             ],
           ),
         ),
@@ -124,30 +126,30 @@ class _TopScreenWidget extends StatelessWidget {
 
 class __PageContentState extends State<_PageContent> {
   final buttons = [
-    CalcButton("%", textAccent: true),
-    CalcButton("^", textAccent: true),
-    CalcButton("sqrt", textAccent: true),
-    CalcButton("C", textVariant: true),
+    CalcButton('%', textAccent: true),
+    CalcButton('^', textAccent: true),
+    CalcButton('sqrt', textAccent: true),
+    CalcButton('C', textVariant: true),
     //----
-    CalcButton("7"),
-    CalcButton("8"),
-    CalcButton("9"),
-    CalcButton("/", textAccent: true),
+    CalcButton('7'),
+    CalcButton('8'),
+    CalcButton('9'),
+    CalcButton('/', textAccent: true),
     //----
-    CalcButton("4"),
-    CalcButton("5"),
-    CalcButton("6"),
-    CalcButton("X", textAccent: true),
+    CalcButton('4'),
+    CalcButton('5'),
+    CalcButton('6'),
+    CalcButton('X', textAccent: true),
     //----
-    CalcButton("1"),
-    CalcButton("2"),
-    CalcButton("3"),
-    CalcButton("-", textAccent: true),
+    CalcButton('1'),
+    CalcButton('2'),
+    CalcButton('3'),
+    CalcButton('-', textAccent: true),
     //----
-    CalcButton("0"),
-    CalcButton("."),
-    CalcButton("=", backgroundAccent: true),
-    CalcButton("+", textAccent: true),
+    CalcButton('0'),
+    CalcButton('.'),
+    CalcButton('=', backgroundAccent: true),
+    CalcButton('+', textAccent: true),
   ];
 
   @override
@@ -164,12 +166,12 @@ class __PageContentState extends State<_PageContent> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                style: NeumorphicStyle(
+                style: const NeumorphicStyle(
                   shape: NeumorphicShape.flat,
                   boxShape: NeumorphicBoxShape.circle(),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(12.0),
                   child: Icon(Icons.navigate_before),
                 ),
               ),
@@ -201,30 +203,30 @@ class __PageContentState extends State<_PageContent> {
                 onPressed: () {
                   setState(() {
                     NeumorphicTheme.of(context)!
-                        .updateCurrentTheme(NeumorphicThemeData(
+                        .updateCurrentTheme(const NeumorphicThemeData(
                       depth: 1,
                       intensity: 0.5,
                       accentColor: Colors.cyan,
                     ));
                   });
                 },
-                child: Text(
-                  "style 1",
+                child: const Text(
+                  'style 1',
                 ),
               ),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
                     NeumorphicTheme.of(context)!
-                        .updateCurrentTheme(NeumorphicThemeData(
+                        .updateCurrentTheme(const NeumorphicThemeData(
                       depth: 8,
                       intensity: 0.3,
                       accentColor: Colors.greenAccent,
                     ));
                   });
                 },
-                child: Text(
-                  "style 2",
+                child: const Text(
+                  'style 2',
                 ),
               ),
             ],

@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import '../../flutter_neumorphic.dart';
-import 'inherited_neumorphic_theme.dart';
-import 'theme.dart';
-import 'theme_wrapper.dart';
 
 export 'inherited_neumorphic_theme.dart';
 export 'theme.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class WidgetsSample extends StatefulWidget {
-  WidgetsSample({Key? key}) : super(key: key);
+  const WidgetsSample({Key? key}) : super(key: key);
 
   @override
   createState() => _ContainersListPageState();
@@ -16,9 +16,9 @@ class _ContainersListPageState extends State<WidgetsSample> {
   bool useDark = false;
 
   Color _textColor() {
-    if (useDark)
+    if (useDark) {
       return Colors.white70;
-    else {
+    } else {
       return Colors.black;
     }
   }
@@ -27,17 +27,17 @@ class _ContainersListPageState extends State<WidgetsSample> {
     return Row(
       children: <Widget>[
         Text(
-          "Progress",
+          'Progress',
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
-        Flexible(
+        const SizedBox(width: 12),
+        const Flexible(
           child: NeumorphicProgress(
             height: 15,
             percent: 0.55,
           ),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
       ],
     );
   }
@@ -46,16 +46,16 @@ class _ContainersListPageState extends State<WidgetsSample> {
     return Row(
       children: <Widget>[
         Text(
-          "Progress",
+          'Progress',
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
-        Flexible(
+        const SizedBox(width: 12),
+        const Flexible(
           child: NeumorphicProgressIndeterminate(
             height: 10,
           ),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
       ],
     );
   }
@@ -64,18 +64,18 @@ class _ContainersListPageState extends State<WidgetsSample> {
     return Row(
       children: <Widget>[
         Text(
-          "Buttons",
+          'Buttons',
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 4),
+        const SizedBox(width: 4),
         NeumorphicButton(
-          style: NeumorphicStyle(
+          style: const NeumorphicStyle(
             shape: NeumorphicShape.flat,
             boxShape: NeumorphicBoxShape.stadium(),
           ),
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 18),
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
           child: Text(
-            "button 1",
+            'button 1',
             style: TextStyle(color: _textColor()),
           ),
           onPressed: () {
@@ -84,15 +84,15 @@ class _ContainersListPageState extends State<WidgetsSample> {
             });
           },
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         NeumorphicButton(
-          style: NeumorphicStyle(
+          style: const NeumorphicStyle(
             shape: NeumorphicShape.flat,
             boxShape: NeumorphicBoxShape.stadium(),
           ),
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 18),
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
           child: Text(
-            "button 2",
+            'button 2',
             style: TextStyle(color: _textColor()),
           ),
           onPressed: () {},
@@ -105,21 +105,11 @@ class _ContainersListPageState extends State<WidgetsSample> {
     return Row(
       children: <Widget>[
         Text(
-          "Radio",
+          'Radio',
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         NeumorphicRadio(
-          child: SizedBox(
-            height: 50,
-            width: 50,
-            child: Center(
-              child: Text(
-                "1",
-                style: TextStyle(color: _textColor()),
-              ),
-            ),
-          ),
           value: 1,
           groupValue: _groupValue,
           onChanged: (value) {
@@ -127,19 +117,19 @@ class _ContainersListPageState extends State<WidgetsSample> {
               _groupValue = value;
             });
           },
-        ),
-        SizedBox(width: 12),
-        NeumorphicRadio(
           child: SizedBox(
             height: 50,
             width: 50,
             child: Center(
               child: Text(
-                "2",
+                '1',
                 style: TextStyle(color: _textColor()),
               ),
             ),
           ),
+        ),
+        const SizedBox(width: 12),
+        NeumorphicRadio(
           value: 2,
           groupValue: _groupValue,
           onChanged: (value) {
@@ -147,19 +137,19 @@ class _ContainersListPageState extends State<WidgetsSample> {
               _groupValue = value;
             });
           },
-        ),
-        SizedBox(width: 12),
-        NeumorphicRadio(
           child: SizedBox(
             height: 50,
             width: 50,
             child: Center(
               child: Text(
-                "3",
+                '2',
                 style: TextStyle(color: _textColor()),
               ),
             ),
           ),
+        ),
+        const SizedBox(width: 12),
+        NeumorphicRadio(
           value: 3,
           groupValue: _groupValue,
           onChanged: (value) {
@@ -167,6 +157,16 @@ class _ContainersListPageState extends State<WidgetsSample> {
               _groupValue = value;
             });
           },
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: Center(
+              child: Text(
+                '3',
+                style: TextStyle(color: _textColor()),
+              ),
+            ),
+          ),
         ),
       ],
     );
@@ -180,10 +180,10 @@ class _ContainersListPageState extends State<WidgetsSample> {
     return Row(
       children: <Widget>[
         Text(
-          "Checkbox",
+          'Checkbox',
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         NeumorphicCheckbox(
           value: check1,
           onChanged: (value) {
@@ -192,7 +192,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
             });
           },
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         NeumorphicCheckbox(
           value: check2,
           onChanged: (value) {
@@ -201,7 +201,7 @@ class _ContainersListPageState extends State<WidgetsSample> {
             });
           },
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         NeumorphicCheckbox(
           value: check3,
           onChanged: (value) {
@@ -215,8 +215,8 @@ class _ContainersListPageState extends State<WidgetsSample> {
   }
 
   Widget _buildIndicators() {
-    final width = 14.0;
-    return SizedBox(
+    const width = 14.0;
+    return const SizedBox(
       height: 130,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -271,10 +271,10 @@ class _ContainersListPageState extends State<WidgetsSample> {
     return Row(
       children: <Widget>[
         Text(
-          "Slider",
+          'Slider',
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Flexible(
           child: NeumorphicSlider(
               height: 15,
@@ -287,12 +287,12 @@ class _ContainersListPageState extends State<WidgetsSample> {
                 });
               }),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Text(
-          "value: ${seekValue.round()}",
+          'value: ${seekValue.round()}',
           style: TextStyle(color: _textColor()),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
       ],
     );
   }
@@ -300,13 +300,13 @@ class _ContainersListPageState extends State<WidgetsSample> {
   Widget _buildSwitches() {
     return Row(children: <Widget>[
       Text(
-        "Switch",
+        'Switch',
         style: TextStyle(color: _textColor()),
       ),
-      SizedBox(width: 15),
+      const SizedBox(width: 15),
       NeumorphicSwitch(
         value: _switchConcaveEnabled,
-        style: NeumorphicSwitchStyle(
+        style: const NeumorphicSwitchStyle(
           thumbShape: NeumorphicShape.concave, // concave or flat with elevation
         ),
         onChanged: (value) {
@@ -315,10 +315,10 @@ class _ContainersListPageState extends State<WidgetsSample> {
           });
         },
       ),
-      SizedBox(width: 15),
+      const SizedBox(width: 15),
       NeumorphicSwitch(
         value: _switchFlatEnabled,
-        style: NeumorphicSwitchStyle(
+        style: const NeumorphicSwitchStyle(
           thumbShape: NeumorphicShape.flat, // concave or flat with elevation
         ),
         onChanged: (value) {
@@ -327,10 +327,10 @@ class _ContainersListPageState extends State<WidgetsSample> {
           });
         },
       ),
-      SizedBox(width: 15),
+      const SizedBox(width: 15),
       NeumorphicSwitch(
         value: _switchConvexEnabled,
-        style: NeumorphicSwitchStyle(
+        style: const NeumorphicSwitchStyle(
           thumbShape: NeumorphicShape.convex,
         ),
         onChanged: (value) {
@@ -346,14 +346,14 @@ class _ContainersListPageState extends State<WidgetsSample> {
   Widget build(BuildContext context) {
     return NeumorphicTheme(
       themeMode: useDark ? ThemeMode.dark : ThemeMode.light,
-      darkTheme: NeumorphicThemeData(
+      darkTheme: const NeumorphicThemeData(
         baseColor: NeumorphicColors.darkBackground,
         accentColor: NeumorphicColors.darkAccent,
         lightSource: LightSource.topLeft,
         depth: 6,
         intensity: 0.3,
       ),
-      theme: NeumorphicThemeData(
+      theme: const NeumorphicThemeData(
         baseColor: NeumorphicColors.background,
         lightSource: LightSource.topLeft,
         depth: 10,
@@ -375,16 +375,16 @@ class _ContainersListPageState extends State<WidgetsSample> {
                   Stack(
                     children: <Widget>[
                       Neumorphic(
+                        style: const NeumorphicStyle(depth: -8),
                         child: AppBar(
-                          iconTheme: IconThemeData.fallback(),
+                          iconTheme: const IconThemeData.fallback(),
                           backgroundColor: Colors.transparent,
                           elevation: 0,
-                          title: Text(
-                            "Widgets",
+                          title: const Text(
+                            'Widgets',
                             style: TextStyle(color: Colors.black),
                           ),
                         ),
-                        style: NeumorphicStyle(depth: -8),
                       ),
                       /*
                       Positioned(
@@ -410,23 +410,23 @@ class _ContainersListPageState extends State<WidgetsSample> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildProgress(),
-                        SizedBox(height: 12),
+                        const SizedBox(height: 12),
                         _buildIndeterminateProgress(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildButtons(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildRadios(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildIndicators(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildChecks(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildSlider(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         _buildSwitches(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                       ],
                     ),
                   )
