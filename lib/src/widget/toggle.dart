@@ -1,6 +1,5 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
-
 class NeumorphicToggleStyle {
   final double? depth;
   final bool? disableDepth;

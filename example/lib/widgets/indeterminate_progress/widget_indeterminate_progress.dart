@@ -5,7 +5,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class IndeterminateProgressWidgetPage extends StatefulWidget {
-  IndeterminateProgressWidgetPage({Key? key}) : super(key: key);
+  const IndeterminateProgressWidgetPage({Key? key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -16,7 +16,7 @@ class _WidgetPageState extends State<IndeterminateProgressWidgetPage> {
   Widget build(BuildContext context) {
     return NeumorphicTheme(
       themeMode: ThemeMode.light,
-      theme: NeumorphicThemeData(
+      theme: const NeumorphicThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumorphicColors.accent,
         depth: 4,
@@ -36,10 +36,10 @@ class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
     return NeumorphicBackground(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
-          title: "IndeterminateProgress",
+        appBar: const TopBar(
+          title: 'IndeterminateProgress',
           actions: <Widget>[
             ThemeConfigurator(),
           ],
@@ -57,7 +57,7 @@ class _PageState extends State<_Page> {
               _DurationWidget(),
               _ReversedWidget(),
               _CurveWidget(),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -73,32 +73,33 @@ class _DefaultWidget extends StatefulWidget {
 
 class _DefaultWidgetState extends State<_DefaultWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 Expanded(
   child: NeumorphicProgressIndeterminate(),
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
-            "Default",
+            'Default',
             style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
-          Expanded(
+          const SizedBox(width: 12),
+          const Expanded(
             child: NeumorphicProgressIndeterminate(),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
         ],
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -117,7 +118,7 @@ class _ColorWidget extends StatefulWidget {
 
 class _ColorWidgetState extends State<_ColorWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 Expanded(
   child: NeumorphicProgressIndeterminate(
       style: ProgressStyle(
@@ -126,7 +127,7 @@ Expanded(
       ),
   ),
 ),
-""");
+''');
   }
 
   Color accent = Colors.green;
@@ -134,12 +135,12 @@ Expanded(
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
-              Text("Accent : "),
+              const Text('Accent : '),
               ColorSelector(
                 onColorChanged: (color) {
                   setState(() {
@@ -148,8 +149,8 @@ Expanded(
                 },
                 color: accent,
               ),
-              SizedBox(width: 12),
-              Text("Variant : "),
+              const SizedBox(width: 12),
+              const Text('Variant : '),
               ColorSelector(
                 onColorChanged: (color) {
                   setState(() {
@@ -160,15 +161,15 @@ Expanded(
               ),
             ],
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
               Text(
-                "Default",
+                'Default',
                 style:
                     TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Expanded(
                 child: NeumorphicProgressIndeterminate(
                   style: ProgressStyle(
@@ -177,7 +178,7 @@ Expanded(
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
             ],
           ),
         ],
@@ -185,6 +186,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -203,35 +205,35 @@ class _SizedWidget extends StatefulWidget {
 
 class _SizedWidgetState extends State<_SizedWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 Expanded(
   child: NeumorphicProgressIndeterminate(
       height: 30,
   ),
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         children: <Widget>[
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
               Text(
-                "Sized",
+                'Sized',
                 style:
                     TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
-              SizedBox(width: 12),
-              Expanded(
+              const SizedBox(width: 12),
+              const Expanded(
                 child: NeumorphicProgressIndeterminate(
                   height: 30,
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
             ],
           ),
         ],
@@ -239,6 +241,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -257,35 +260,35 @@ class _DurationWidget extends StatefulWidget {
 
 class _DurationWidgetState extends State<_DurationWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 Expanded(
   child: NeumorphicProgressIndeterminate(
        duration: Duration(seconds: 10),
   ),
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         children: <Widget>[
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
               Text(
-                "Duration",
+                'Duration',
                 style:
                     TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
               ),
-              SizedBox(width: 12),
-              Expanded(
+              const SizedBox(width: 12),
+              const Expanded(
                 child: NeumorphicProgressIndeterminate(
                   duration: Duration(seconds: 10),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
             ],
           ),
         ],
@@ -293,6 +296,7 @@ Expanded(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -311,36 +315,37 @@ class _ReversedWidget extends StatefulWidget {
 
 class _ReversedWidgetState extends State<_ReversedWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 Expanded(
   child: NeumorphicProgressIndeterminate(
        reverse: true,
   ),
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
-            "Reversed",
+            'Reversed',
             style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
-          Expanded(
+          const SizedBox(width: 12),
+          const Expanded(
             child: NeumorphicProgressIndeterminate(
               reverse: true,
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
         ],
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -359,36 +364,37 @@ class _CurveWidget extends StatefulWidget {
 
 class _CurveWidgetState extends State<_CurveWidget> {
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 Expanded(
   child: NeumorphicProgressIndeterminate(
        curve: Curves.bounceOut,
   ),
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
-            "Curve",
+            'Curve',
             style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
-          Expanded(
+          const SizedBox(width: 12),
+          const Expanded(
             child: NeumorphicProgressIndeterminate(
               curve: Curves.bounceOut,
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
         ],
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

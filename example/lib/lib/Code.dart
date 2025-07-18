@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 class Code extends StatelessWidget {
   final String text;
 
-  Code(this.text);
+  const Code(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
-      color: Colors.grey.withOpacity(0.2),
+      padding: const EdgeInsets.all(8),
+      color: Colors.grey.withValues(alpha: 0.2),
       child: Text(
         text,
-        style: TextStyle(color: Colors.black.withOpacity(0.8)),
+        style: TextStyle(color: Colors.black.withValues(alpha: 0.8)),
       ),
     );
   }
@@ -21,7 +21,7 @@ class Code extends StatelessWidget {
 class MyIntWidget extends StatefulWidget {
   final int value;
 
-  MyIntWidget({required this.value});
+  const MyIntWidget({super.key, required this.value});
 
   @override
   _MyIntWidgetState createState() => _MyIntWidgetState();
@@ -35,9 +35,9 @@ class _MyIntWidgetState extends State<MyIntWidget>
 
   @override
   void initState() {
-    this._value = widget.value;
-    _controller =
-        AnimationController(duration: Duration(milliseconds: 300), vsync: this);
+    _value = widget.value;
+    _controller = AnimationController(
+        duration: const Duration(milliseconds: 300), vsync: this);
     super.initState();
   }
 
@@ -63,6 +63,6 @@ class _MyIntWidgetState extends State<MyIntWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Text("current : $_value");
+    return Text('current : $_value');
   }
 }

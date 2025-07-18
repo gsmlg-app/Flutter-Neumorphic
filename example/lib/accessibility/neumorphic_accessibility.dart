@@ -2,6 +2,8 @@ import 'package:example/lib/color_selector.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class NeumorphicAccessibility extends StatefulWidget {
+  const NeumorphicAccessibility({super.key});
+
   @override
   createState() => _NeumorphicAccessibilityState();
 }
@@ -11,7 +13,7 @@ class _NeumorphicAccessibilityState extends State<NeumorphicAccessibility> {
   Widget build(BuildContext context) {
     return NeumorphicTheme(
       themeMode: ThemeMode.light,
-      theme: NeumorphicThemeData(
+      theme: const NeumorphicThemeData(
         baseColor: Color(0xffDDDDDD),
         lightSource: LightSource.topLeft,
         depth: 6,
@@ -42,10 +44,10 @@ class __PageState extends State<_Page> {
   late Color borderColor;
   late double borderWidth;
 
-  static final minWidth = 50.0;
-  static final maxWidth = 200.0;
-  static final minHeight = 50.0;
-  static final maxHeight = 200.0;
+  static const minWidth = 50.0;
+  static const maxWidth = 200.0;
+  static const minHeight = 50.0;
+  static const maxHeight = 200.0;
 
   @override
   void didChangeDependencies() {
@@ -68,8 +70,8 @@ class __PageState extends State<_Page> {
                   padding:
                       const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
                   child: ElevatedButton(
-                    child: Text(
-                      "back",
+                    child: const Text(
+                      'back',
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
@@ -100,14 +102,11 @@ class __PageState extends State<_Page> {
   int selectedConfiguratorIndex = 0;
 
   Widget _configurators() {
-    final Color buttonActiveColor = Theme.of(context).colorScheme.secondary;
-    final Color buttonInnactiveColor = Colors.white;
-
-    final Color textActiveColor = Colors.white;
-    final Color textInactiveColor = Colors.black.withOpacity(0.3);
+    const Color textActiveColor = Colors.white;
+    final Color textInactiveColor = Colors.black.withValues(alpha: 0.3);
 
     return Card(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       elevation: 12,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       color: Colors.grey[300],
@@ -122,7 +121,7 @@ class __PageState extends State<_Page> {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     child: Text(
-                      "Style",
+                      'Style',
                       style: TextStyle(
                         color: selectedConfiguratorIndex == 0
                             ? textActiveColor
@@ -143,7 +142,7 @@ class __PageState extends State<_Page> {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     child: Text(
-                      "Element",
+                      'Element',
                       style: TextStyle(
                         color: selectedConfiguratorIndex == 1
                             ? textActiveColor
@@ -164,7 +163,7 @@ class __PageState extends State<_Page> {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     child: Text(
-                      "Border",
+                      'Border',
                       style: TextStyle(
                         color: selectedConfiguratorIndex == 2
                             ? textActiveColor
@@ -191,13 +190,10 @@ class __PageState extends State<_Page> {
     switch (selectedConfiguratorIndex) {
       case 0:
         return styleCustomizer();
-        break;
       case 1:
         return elementCustomizer();
-        break;
       case 2:
         return borderCustomizer();
-        break;
     }
     return Container();
   }
@@ -238,11 +234,11 @@ class __PageState extends State<_Page> {
   Widget colorPicker() {
     return Row(
       children: <Widget>[
-        SizedBox(
+        const SizedBox(
           width: 12,
         ),
-        Text("Color "),
-        SizedBox(
+        const Text('Color '),
+        const SizedBox(
           width: 4,
         ),
         ColorSelector(
@@ -261,11 +257,11 @@ class __PageState extends State<_Page> {
   Widget borderColorPicker() {
     return Row(
       children: <Widget>[
-        SizedBox(
+        const SizedBox(
           width: 12,
         ),
-        Text("BorderColor "),
-        SizedBox(
+        const Text('BorderColor '),
+        const SizedBox(
           width: 4,
         ),
         ColorSelector(
@@ -283,32 +279,32 @@ class __PageState extends State<_Page> {
   Widget neumorphic() {
     return NeumorphicButton(
       padding: EdgeInsets.zero,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       onPressed: () {
         setState(() {});
       },
       style: NeumorphicStyle(
         boxShape: boxShape,
         border: NeumorphicBorder(
-            isEnabled: true, width: this.borderWidth, color: this.borderColor),
-        shape: this.shape,
-        intensity: this.intensity,
+            isEnabled: true, width: borderWidth, color: borderColor),
+        shape: shape,
+        intensity: intensity,
         /*
         shadowLightColor: Colors.red,
         shadowDarkColor: Colors.blue,
         shadowLightColorEmboss: Colors.red,
         shadowDarkColorEmboss: Colors.blue,
          */
-        surfaceIntensity: this.surfaceIntensity,
+        surfaceIntensity: surfaceIntensity,
         depth: depth,
-        lightSource: this.lightSource,
+        lightSource: lightSource,
       ),
       child: SizedBox(
         height: height,
         width: width,
         child: Container(
           //color: Colors.blue,
-          child: Center(child: Text("")),
+          child: const Center(child: Text('')),
         ),
       ),
     );
@@ -317,9 +313,9 @@ class __PageState extends State<_Page> {
   Widget depthSelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
-          child: Text("Depth"),
+          child: Text('Depth'),
         ),
         Expanded(
           child: Slider(
@@ -334,7 +330,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(depth.floor().toString()),
         ),
       ],
@@ -344,9 +340,9 @@ class __PageState extends State<_Page> {
   Widget borderWidthSelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
-          child: Text("BorderWidth"),
+          child: Text('BorderWidth'),
         ),
         Expanded(
           child: Slider(
@@ -361,7 +357,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(borderWidth.floor().toString()),
         ),
       ],
@@ -371,10 +367,10 @@ class __PageState extends State<_Page> {
   Widget sizeSelector() {
     return Row(
       children: <Widget>[
-        SizedBox(
+        const SizedBox(
           width: 12,
         ),
-        Text("W: "),
+        const Text('W: '),
         Expanded(
           child: Slider(
             min: minWidth,
@@ -387,7 +383,7 @@ class __PageState extends State<_Page> {
             },
           ),
         ),
-        Text("H: "),
+        const Text('H: '),
         Expanded(
           child: Slider(
             min: minHeight,
@@ -408,9 +404,9 @@ class __PageState extends State<_Page> {
     if (boxShape.isRoundRect) {
       return Row(
         children: <Widget>[
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 12),
-            child: Text("Corner"),
+            child: Text('Corner'),
           ),
           Expanded(
             child: Slider(
@@ -422,29 +418,29 @@ class __PageState extends State<_Page> {
                   cornerRadius = value;
                   if (boxShape.isRoundRect) {
                     boxShape = NeumorphicBoxShape.roundRect(
-                        BorderRadius.circular(this.cornerRadius));
+                        BorderRadius.circular(cornerRadius));
                   }
                 });
               },
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 12),
+            padding: const EdgeInsets.only(right: 12),
             child: Text(cornerRadius.floor().toString()),
           ),
         ],
       );
     } else {
-      return SizedBox();
+      return const SizedBox();
     }
   }
 
   Widget intensitySelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
-          child: Text("Intensity"),
+          child: Text('Intensity'),
         ),
         Expanded(
           child: Slider(
@@ -459,7 +455,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(((intensity * 100).floor() / 100).toString()),
         ),
       ],
@@ -469,9 +465,9 @@ class __PageState extends State<_Page> {
   Widget surfaceIntensitySelector() {
     return Row(
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 12),
-          child: Text("SurfaceIntensity"),
+          child: Text('SurfaceIntensity'),
         ),
         Expanded(
           child: Slider(
@@ -486,7 +482,7 @@ class __PageState extends State<_Page> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 12),
           child: Text(((surfaceIntensity * 100).floor() / 100).toString()),
         ),
       ],
@@ -494,11 +490,8 @@ class __PageState extends State<_Page> {
   }
 
   Widget shapeWidget() {
-    final Color buttonActiveColor = Theme.of(context).colorScheme.secondary;
-    final Color buttonInnactiveColor = Colors.white;
-
-    final Color iconActiveColor = Colors.white;
-    final Color iconInactiveColor = Colors.black.withOpacity(0.3);
+    const Color iconActiveColor = Colors.white;
+    final Color iconInactiveColor = Colors.black.withValues(alpha: 0.3);
 
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -512,7 +505,7 @@ class __PageState extends State<_Page> {
                   shape = NeumorphicShape.concave;
                 });
               },
-              child: Image.asset("assets/images/concave.png",
+              child: Image.asset('assets/images/concave.png',
                   color: shape == NeumorphicShape.concave
                       ? iconActiveColor
                       : iconInactiveColor),
@@ -528,7 +521,7 @@ class __PageState extends State<_Page> {
                   shape = NeumorphicShape.convex;
                 });
               },
-              child: Image.asset("assets/images/convex.png",
+              child: Image.asset('assets/images/convex.png',
                   color: shape == NeumorphicShape.convex
                       ? iconActiveColor
                       : iconInactiveColor),
@@ -544,7 +537,7 @@ class __PageState extends State<_Page> {
                   shape = NeumorphicShape.flat;
                 });
               },
-              child: Image.asset("assets/images/flat.png",
+              child: Image.asset('assets/images/flat.png',
                   color: shape == NeumorphicShape.flat
                       ? iconActiveColor
                       : iconInactiveColor),

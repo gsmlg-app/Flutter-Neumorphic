@@ -17,10 +17,12 @@ import 'slider/widget_slider.dart';
 import 'switch/widget_switch.dart';
 
 class WidgetsHome extends StatelessWidget {
+  const WidgetsHome({super.key});
+
   Widget _buildButton({String? text, VoidCallback? onClick}) {
     return NeumorphicButton(
-      margin: EdgeInsets.only(bottom: 12),
-      padding: EdgeInsets.symmetric(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.symmetric(
         vertical: 18,
         horizontal: 24,
       ),
@@ -30,15 +32,15 @@ class WidgetsHome extends StatelessWidget {
         ),
         shape: NeumorphicShape.flat,
       ),
-      child: Center(child: Text(text ?? '')),
       onPressed: onClick,
+      child: Center(child: Text(text ?? '')),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return NeumorphicTheme(
-      theme: NeumorphicThemeData(depth: 8),
+      theme: const NeumorphicThemeData(depth: 8),
       child: Scaffold(
         backgroundColor: NeumorphicColors.background,
         body: SafeArea(
@@ -50,117 +52,117 @@ class WidgetsHome extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  TopBar(title: "Widgets"),
+                  const TopBar(title: 'Widgets'),
                   _buildButton(
-                      text: "Container",
+                      text: 'Container',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return ContainerWidgetPage();
+                          return const ContainerWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "App bar",
+                      text: 'App bar',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return AppBarWidgetPage();
+                          return const AppBarWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Button",
+                      text: 'Button',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return ButtonWidgetPage();
+                          return const ButtonWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Icon",
+                      text: 'Icon',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return IconWidgetPage();
+                          return const IconWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "RadioButton",
+                      text: 'RadioButton',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return RadioButtonWidgetPage();
+                          return const RadioButtonWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Checkbox",
+                      text: 'Checkbox',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return CheckboxWidgetPage();
+                          return const CheckboxWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Switch",
+                      text: 'Switch',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return SwitchWidgetPage();
+                          return const SwitchWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Toggle",
+                      text: 'Toggle',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return ToggleWidgetPage();
+                          return const ToggleWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Slider",
+                      text: 'Slider',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return SliderWidgetPage();
+                          return const SliderWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Range slider",
+                      text: 'Range slider',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return RangeSliderWidgetPage();
+                          return const RangeSliderWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Indicator",
+                      text: 'Indicator',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return IndicatorWidgetPage();
+                          return const IndicatorWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Progress",
+                      text: 'Progress',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return ProgressWidgetPage();
+                          return const ProgressWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "IndeterminateProgress",
+                      text: 'IndeterminateProgress',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return IndeterminateProgressWidgetPage();
+                          return const IndeterminateProgressWidgetPage();
                         }));
                       }),
                   _buildButton(
-                      text: "Background",
+                      text: 'Background',
                       onClick: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return BackgroundWidgetPage();
+                          return const BackgroundWidgetPage();
                         }));
                       }),
                 ],

@@ -1,6 +1,5 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
-
 typedef void NeumorphicSliderListener(double percent);
 
 /// A style to customize the [NeumorphicSlider]

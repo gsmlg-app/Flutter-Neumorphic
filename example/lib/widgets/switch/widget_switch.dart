@@ -5,7 +5,7 @@ import 'package:example/lib/top_bar.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
 class SwitchWidgetPage extends StatefulWidget {
-  SwitchWidgetPage({Key? key}) : super(key: key);
+  const SwitchWidgetPage({Key? key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -16,7 +16,7 @@ class _WidgetPageState extends State<SwitchWidgetPage> {
   Widget build(BuildContext context) {
     return NeumorphicTheme(
       themeMode: ThemeMode.light,
-      theme: NeumorphicThemeData(
+      theme: const NeumorphicThemeData(
         lightSource: LightSource.topLeft,
         accentColor: NeumorphicColors.accent,
         depth: 4,
@@ -36,10 +36,10 @@ class _PageState extends State<_Page> {
   @override
   Widget build(BuildContext context) {
     return NeumorphicBackground(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
-        appBar: TopBar(
-          title: "Switch",
+        appBar: const TopBar(
+          title: 'Switch',
           actions: <Widget>[
             ThemeConfigurator(),
           ],
@@ -53,10 +53,10 @@ class _PageState extends State<_Page> {
             children: [
               _DefaultWidget(),
               _ColorizableWidget(),
-              ColorizableThumbSwitch(),
+              const ColorizableThumbSwitch(),
               _FlatConcaveConvexWidget(),
               _EnabledDisabledWidget(),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -75,7 +75,7 @@ class _DefaultWidgetState extends State<_DefaultWidget> {
   bool isEnabled = true;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 bool isChecked;
 
 NeumorphicSwitch(
@@ -86,19 +86,19 @@ NeumorphicSwitch(
         });
     },
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
-            "Default",
+            'Default',
             style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumorphicSwitch(
             isEnabled: isEnabled,
             value: isChecked,
@@ -108,7 +108,7 @@ NeumorphicSwitch(
               });
             },
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           TextButton(
               onPressed: () {
                 setState(() {
@@ -121,6 +121,7 @@ NeumorphicSwitch(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -141,7 +142,7 @@ class _FlatConcaveConvexWidgetState extends State<_FlatConcaveConvexWidget> {
   bool isChecked = false;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 bool isChecked;
 
 NeumorphicSwitch(
@@ -156,28 +157,29 @@ NeumorphicSwitch(
         });
     },
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         children: <Widget>[
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 100,
                 child: Text(
-                  "Flat",
+                  'Flat',
                   style: TextStyle(
                       color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               NeumorphicSwitch(
-                style: NeumorphicSwitchStyle(thumbShape: NeumorphicShape.flat),
+                style: const NeumorphicSwitchStyle(
+                    thumbShape: NeumorphicShape.flat),
                 value: isChecked,
                 onChanged: (value) {
                   setState(() {
@@ -187,21 +189,21 @@ NeumorphicSwitch(
               )
             ],
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 100,
                 child: Text(
-                  "Concave",
+                  'Concave',
                   style: TextStyle(
                       color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               NeumorphicSwitch(
-                style:
-                    NeumorphicSwitchStyle(thumbShape: NeumorphicShape.concave),
+                style: const NeumorphicSwitchStyle(
+                    thumbShape: NeumorphicShape.concave),
                 value: isChecked,
                 onChanged: (value) {
                   setState(() {
@@ -211,21 +213,21 @@ NeumorphicSwitch(
               ),
             ],
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 100,
                 child: Text(
-                  "Convex",
+                  'Convex',
                   style: TextStyle(
                       color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               NeumorphicSwitch(
-                style:
-                    NeumorphicSwitchStyle(thumbShape: NeumorphicShape.convex),
+                style: const NeumorphicSwitchStyle(
+                    thumbShape: NeumorphicShape.convex),
                 value: isChecked,
                 onChanged: (value) {
                   setState(() {
@@ -240,6 +242,7 @@ NeumorphicSwitch(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -261,7 +264,7 @@ class _ColorizableWidgetState extends State<_ColorizableWidget> {
   Color currentColor = Colors.green;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 bool isChecked;
 
 NeumorphicSwitch(
@@ -275,19 +278,19 @@ NeumorphicSwitch(
         });
     },
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
-            "Color",
+            'Color',
             style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           ColorSelector(
             color: currentColor,
             onColorChanged: (color) {
@@ -296,7 +299,7 @@ NeumorphicSwitch(
               });
             },
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumorphicSwitch(
             value: isChecked,
             style: NeumorphicSwitchStyle(activeTrackColor: currentColor),
@@ -311,6 +314,7 @@ NeumorphicSwitch(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -323,6 +327,8 @@ NeumorphicSwitch(
 }
 
 class ColorizableThumbSwitch extends StatefulWidget {
+  const ColorizableThumbSwitch({super.key});
+
   @override
   createState() => _ColorizableThumbSwitchState();
 }
@@ -333,7 +339,7 @@ class _ColorizableThumbSwitchState extends State<ColorizableThumbSwitch> {
   Color trackColor = Colors.lightGreen;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 bool isChecked;
 
 NeumorphicSwitch(
@@ -348,19 +354,19 @@ NeumorphicSwitch(
         });
     },
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Row(
         children: <Widget>[
           Text(
-            "Track",
+            'Track',
             style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           ColorSelector(
             color: trackColor,
             onColorChanged: (color) {
@@ -369,12 +375,12 @@ NeumorphicSwitch(
               });
             },
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Text(
-            "Thumb",
+            'Thumb',
             style: TextStyle(color: NeumorphicTheme.defaultTextColor(context)),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           ColorSelector(
             color: thumbColor,
             onColorChanged: (color) {
@@ -383,7 +389,7 @@ NeumorphicSwitch(
               });
             },
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           NeumorphicSwitch(
             value: isChecked,
             style: NeumorphicSwitchStyle(
@@ -399,6 +405,7 @@ NeumorphicSwitch(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -420,7 +427,7 @@ class _EnabledDisabledWidgetState extends State<_EnabledDisabledWidget> {
   bool isChecked2 = false;
 
   Widget _buildCode(BuildContext context) {
-    return Code("""
+    return const Code('''
 bool isChecked;
 
 NeumorphicSwitch(
@@ -432,29 +439,29 @@ NeumorphicSwitch(
         });
     },
 ),
-""");
+''');
   }
 
   Widget _buildWidget(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         children: <Widget>[
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 100,
                 child: Text(
-                  "Enabled",
+                  'Enabled',
                   style: TextStyle(
                       color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               NeumorphicSwitch(
-                style:
-                    NeumorphicSwitchStyle(thumbShape: NeumorphicShape.concave),
+                style: const NeumorphicSwitchStyle(
+                    thumbShape: NeumorphicShape.concave),
                 value: isChecked1,
                 onChanged: (value) {
                   setState(() {
@@ -464,22 +471,22 @@ NeumorphicSwitch(
               ),
             ],
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 100,
                 child: Text(
-                  "Disabled",
+                  'Disabled',
                   style: TextStyle(
                       color: NeumorphicTheme.defaultTextColor(context)),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               NeumorphicSwitch(
                 isEnabled: false,
-                style:
-                    NeumorphicSwitchStyle(thumbShape: NeumorphicShape.convex),
+                style: const NeumorphicSwitchStyle(
+                    thumbShape: NeumorphicShape.convex),
                 value: isChecked2,
                 onChanged: (value) {
                   setState(() {
@@ -494,6 +501,7 @@ NeumorphicSwitch(
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
