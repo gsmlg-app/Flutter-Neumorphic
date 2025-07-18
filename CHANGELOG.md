@@ -1,3 +1,10 @@
+## 3.5.0
+
+* Update to latest Flutter SDK compatibility
+* Improved performance and stability
+* Fixed various minor bugs and warnings
+* Enhanced documentation and examples
+
 ## 3.4.0
 
 * Remove `headline5` and `bodyText2`, they are nolonger exists
