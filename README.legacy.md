@@ -4,7 +4,7 @@ A complete, ready to use, Neumorphic ui kit for Flutter
 
 [![flutter_logo](https://github.com/Idean/Flutter-Neumorphic/blob/master/medias/flutter_logo_small.gif)](https://github.com/Idean/Flutter-Neumorphic)
 
-Try Flutter-Neumorphic on your browser : 👉 <https://gsmlg-dev.github.io/Flutter-Neumorphic/> 🌐
+Try Flutter-Neumorphic on your browser : 👉 <https://gsmlg-app.github.io/Flutter-Neumorphic/> 🌐
 
 [![neumorphic_playground](https://github.com/Idean/Flutter-Neumorphic/blob/master/medias/playground.gif)](https://github.com/Idean/Flutter-Neumorphic)
 

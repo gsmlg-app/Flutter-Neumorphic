@@ -2,9 +2,9 @@
 
 A complete, ready to use, Neumorphic ui kit for Flutter, fork from 
 
-[![flutter_logo](https://github.com/gsmlg-dev/Flutter-Neumorphic/blob/master/medias/flutter_logo_small.gif)](https://github.com/gsmlg-dev/Flutter-Neumorphic)
+[![flutter_logo](https://github.com/gsmlg-app/Flutter-Neumorphic/blob/master/medias/flutter_logo_small.gif)](https://github.com/gsmlg-app/Flutter-Neumorphic)
 
-Try Flutter-Neumorphic on your browser : 👉 <https://gsmlg-dev.github.io/Flutter-Neumorphic/> 🌐
+Try Flutter-Neumorphic on your browser : 👉 <https://gsmlg-app.github.io/Flutter-Neumorphic/> 🌐
 
 
 # ⚙️ Installation
@@ -17,7 +17,7 @@ https://pub.dartlang.org/packages/flutter_neumorphic_plus)
 
 ```dart
 dependencies:
-  flutter_neumorphic_plus: ^3.4.0
+  flutter_neumorphic_plus: ^3.5.0
 
 //requires flutter > 3.0.0
 ```
